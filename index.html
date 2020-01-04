@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Algorytm najbliższego sąsiada</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Algorytm najbliższego sąsiada</h1>
+    <span class="author">Wykonanie: Mateusz Komar - I rok, IT, NS</span>
+    <hr>
+    <p>Podaj współrzędne punktu startowego:</p>
+    <span>0. X: </span> <input type="number" id="startX">
+    <span>Y: </span> <input type="number" id="startY">
+    <br />
+    <p>Poniżej podaj współrzędne różnych punktów:</p>
+    <span>1. X: </span> <input type="number" id="pointX_0">
+    <span> Y: </span> <input type="number" id="pointY_0">
+    <div id="points"></div>
+
+    <input type="button" value="Dodaj punkt" id="add-btn" onclick="add()">
+    <input type="button" value="Oblicz" id="count-btn" onclick="count()">
+    <script src="./app.js"></script>
+</body>
+</html>

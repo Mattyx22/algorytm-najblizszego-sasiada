@@ -1,0 +1,26 @@
+body {
+    font-size: 19px;
+}
+
+input {
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#add-btn {
+    background: #12c5ff;
+    border: 1px solid #12c5ff;
+    color: white;
+    padding: 10px 30px;
+    font-size: 15px;
+}
+
+#count-btn {
+    background: #269800;
+    border: 1px solid #269800;
+    color: white;
+    padding: 10px 30px;
+    font-size: 15px;
+}
