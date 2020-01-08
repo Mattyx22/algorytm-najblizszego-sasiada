@@ -1,10 +1,33 @@
-// Ogólne zmienne - do dodawania nowych punktów w html
+// Ogólne zmienne - do dodawania nowych punktów w html oraz do obliczenia drogi
 let point=1;
+let sum=0;
 
 // Funkcja dodająca nowy punkt 
 function add(){
-    document.getElementById('points').innerHTML += `<span>${point+1}. X: </span> <input type="number" id="pointX_${point}">
-    <span> Y: </span> <input type="number" id="pointY_${point}"> <br>`;
+    // Utworzenie elementu span, dodanie do niego tekstu i pojawienie się go w aplikacji
+    // Liczba porządkowa i X
+    let lp = document.createElement('span');
+    let lpText = document.createTextNode(point + '. X: ');
+    lp.appendChild(lpText);
+    document.body.appendChild(lp);
+    // Utworzenie inputa pod współrzędną X
+    let inputBoxX = document.createElement("input");
+    inputBoxX.setAttribute('id', `pointX_${point}`);
+    inputBoxX.setAttribute('type', 'text');
+    document.body.appendChild(inputBoxX);
+    // Utworzenie span'a z napisem Y:
+    let Y = document.createElement('span');
+    let YText = document.createTextNode(' Y: ');
+    Y.appendChild(YText);
+    document.body.appendChild(Y);
+    // Utworzenie inputa pod wpółrzędną Y
+    let inputBoxY = document.createElement("input");
+    inputBoxY.setAttribute('id', `pointY_${point}`);
+    inputBoxY.setAttribute('type', 'text');
+    document.body.appendChild(inputBoxY);
+    // Reszta
+    let br = document.createElement("br");
+    document.body.appendChild(br);
     point++;
 }
 
@@ -54,13 +77,20 @@ function count(){
                                 path = pathLength;
                                 next = j;
                             }
-                        
                 }
+                sum+=path;
                 final.push(array[next]);
                 array.splice(next, 1);
                 path = 99999999;
     }
-    
+    document.write('Całkowita długość drogi (bez powrotu do punktu startowego): ' + sum);
+    document.write('<br>');
+    let finalLength = final.length - 1;
+    wholewayX = final[finalLength][0] - final[0][0];
+    wholewayY = final[finalLength][1] - final[0][1];
+    let wholeWay = Math.sqrt(wholewayX * wholewayX + wholewayY * wholewayY) + sum;
+    document.write('Całkowita długość drogi (wraz z powrotem do punktu startowego): ' + wholeWay);
+    document.write('<br>');
     // wypisanie odpowiedzi
     document.write('Kolejność:');
     document.write('<br>');
